@@ -13,6 +13,15 @@ h6 {
   font-family: "Poppins", sans-serif;
   font-weight: 700; }
 
+h1 {
+  font-size: 50px; }
+
+h2 {
+  font-size: 40px; }
+
+h3 {
+  font-size: 30px; }
+
 .btn {
   width: 300px;
   height: 60px;
@@ -31,8 +40,8 @@ h6 {
 body {
   font-family: "Open Sans", sans-serif;
   font-weight: 400;
-  width: 1440px;
-  padding: 5% 0;
+  max-width: 1440px;
+  padding-top: 5%;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -65,29 +74,24 @@ body {
     gap: 100px; }
     body main .hero-section {
       max-width: 100%;
-      padding: 0 10%;
       display: flex;
       flex-direction: column;
       align-items: center;
       gap: 50px; }
       body main .hero-section h1 {
         width: 100%;
-        text-align: center;
-        font-stretch: ultra-expanded;
-        font-size: 50px; }
+        text-align: center; }
       body main .hero-section p {
-        width: 55%;
+        width: 600px;
         font-size: 20px;
         text-align: center; }
-    body main .screen-mockups {
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: center; }
+    body main .screen-mockups img {
+      max-width: 100%; }
     body main .stats {
       width: 100%;
       display: flex;
-      justify-content: space-evenly; }
+      justify-content: space-evenly;
+      align-items: center; }
       body main .stats p {
         font-size: 80px;
         font-weight: 700; }
@@ -99,19 +103,18 @@ body {
       display: flex;
       flex-direction: column;
       max-width: 100%; }
-      body main section .section-content p {
-        padding-top: 5%; }
+      body main section .section-content {
+        width: 500px; }
       body main section .section-container {
         background-color: #f5faff;
         padding: 0 10%;
         display: flex;
         justify-content: space-between;
-        align-items: center;
-        gap: 15%; }
+        align-items: center; }
         body main section .section-container img {
-          width: 40%; }
-        body main section .section-container h2 {
-          font-size: 40px; }
+          width: 450px; }
+    body main .flowing-conversations > img {
+      visibility: hidden; }
     body main .flowing-conversations .section-container {
       background-color: transparent;
       flex-direction: row-reverse; }
@@ -119,50 +122,55 @@ body {
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 50px; }
-      body main .get-started h2 {
-        font-size: 40px; }
+      gap: 50px;
+      text-align: center; }
   body footer {
     display: flex;
-    flex-direction: column; }
+    flex-direction: column;
+    width: 100%; }
     body footer .footer-container {
       background-color: #00252e;
       color: whitesmoke;
-      padding: 5% 10%;
-      height: 400px;
+      padding: 10% 5%;
       display: flex;
-      justify-content: space-between; }
+      justify-content: space-between;
+      gap: 25%; }
       body footer .footer-container .contact {
-        flex-basis: 27%;
         display: flex;
         flex-direction: column;
-        justify-content: space-around; }
+        justify-content: space-around;
+        gap: 30px; }
         body footer .footer-container .contact .logo {
           filter: brightness(0) invert(1);
           width: 70%; }
         body footer .footer-container .contact .social-media {
+          padding-top: 10%;
           display: flex;
           align-items: center;
           gap: 5%; }
+          body footer .footer-container .contact .social-media .facebook-logo:hover {
+            content: url("https://img.icons8.com/glyph-neue/50/159DF8/facebook.png"); }
+          body footer .footer-container .contact .social-media .instagram-logo:hover {
+            background-image: linear-gradient(to bottom left, #c32aa3, #4c5fd7, #7232bd, #f46f30, #ffdc7d);
+            border-radius: 15px; }
+          body footer .footer-container .contact .social-media .twitter-logo:hover {
+            content: url("https://img.icons8.com/glyph-neue/50/1D96E9/twitter-squared.png"); }
       body footer .footer-container .newsletter {
-        flex-basis: 50%;
         display: flex;
-        flex-direction: column; }
-        body footer .footer-container .newsletter h3 {
-          font-size: 30px; }
-        body footer .footer-container .newsletter p {
-          padding: 5% 0;
-          width: 380px; }
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 50px; }
         body footer .footer-container .newsletter form {
-          height: 50px;
+          width: 100%;
           display: flex;
           justify-content: space-between; }
           body footer .footer-container .newsletter form :first-child {
-            flex-basis: 60%;
-            border-radius: 10px;
-            padding: 5px; }
+            height: 50px;
+            width: 340px;
+            border-radius: 10px; }
           body footer .footer-container .newsletter form :nth-child(2) {
-            flex-basis: 30%;
+            height: 50px;
+            width: 100px;
             background-color: #ff52bf;
             color: whitesmoke;
             border-radius: 10px;
@@ -176,3 +184,47 @@ body {
   padding-bottom: 5%; }
   .attribution a {
     color: #c4cbe9; }
+
+@media screen and (max-width: 768px) {
+  body {
+    max-width: 375px;
+    gap: 100px; }
+    body header img {
+      width: 30%; }
+    body .hero-section p {
+      max-width: 370px; }
+    body .stats {
+      flex-direction: column;
+      gap: 100px; }
+    body .section-container {
+      flex-direction: column-reverse;
+      align-items: center;
+      justify-content: center;
+      gap: 100px; }
+      body .section-container img {
+        max-width: 300px; }
+      body .section-container .section-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 20px;
+        max-width: 340px;
+        padding-bottom: 50px; }
+    body .footer-container {
+      flex-direction: column-reverse; }
+      body .footer-container .newsletter {
+        align-items: flex-start;
+        padding-bottom: 100px; }
+        body .footer-container .newsletter form {
+          flex-direction: column;
+          align-items: flex-end;
+          gap: 20px; }
+  body main .flowing-conversations .section-container {
+    flex-direction: column-reverse; }
+  h1 {
+    font-size: 30px; }
+  h2 {
+    font-size: 25px; }
+  h3 {
+    font-size: 20px; } }

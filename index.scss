@@ -25,6 +25,15 @@ h6 {
   font-family: "Poppins", sans-serif;
   font-weight: 700;
 }
+h1 {
+  font-size: 50px;
+}
+h2 {
+  font-size: 40px;
+}
+h3 {
+  font-size: 30px;
+}
 
 .btn {
   width: 300px;
@@ -50,8 +59,8 @@ h6 {
 body {
   font-family: "Open Sans", sans-serif;
   font-weight: 400;
-  width: $desktopWidth;
-  padding: 5% 0;
+  max-width: $desktopWidth;
+  padding-top: 5%;
 
   display: flex;
   flex-direction: column;
@@ -97,7 +106,6 @@ body {
 
     & .hero-section {
       max-width: 100%;
-      padding: 0 10%;
 
       display: flex;
       flex-direction: column;
@@ -107,23 +115,18 @@ body {
       & h1 {
         width: 100%;
         text-align: center;
-        font-stretch: ultra-expanded;
-        font-size: 50px;
       }
 
       & p {
-        width: 55%;
+        width: 600px;
         font-size: 20px;
 
         text-align: center;
       }
     }
 
-    & .screen-mockups {
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+    & .screen-mockups img {
+      max-width: 100%;
     }
 
     & .stats {
@@ -131,6 +134,7 @@ body {
 
       display: flex;
       justify-content: space-evenly;
+      align-items: center;
 
       & p {
         font-size: 80px;
@@ -149,8 +153,8 @@ body {
       flex-direction: column;
       max-width: 100%;
 
-      & .section-content p {
-        padding-top: 5%;
+      & .section-content {
+        width: 500px;
       }
 
       & .section-container {
@@ -159,21 +163,21 @@ body {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        gap: 15%;
 
         & img {
-          width: 40%;
-        }
-
-        & h2 {
-          font-size: 40px;
+          width: 450px;
         }
       }
     }
 
-    & .flowing-conversations .section-container {
-      background-color: transparent;
-      flex-direction: row-reverse;
+    & .flowing-conversations {
+      & > img {
+        visibility: hidden;
+      }
+      & .section-container {
+        background-color: transparent;
+        flex-direction: row-reverse;
+      }
     }
 
     & .get-started {
@@ -181,32 +185,32 @@ body {
       flex-direction: column;
       align-items: center;
       gap: 50px;
-
-      & h2 {
-        font-size: 40px;
-      }
+      text-align: center;
     }
   }
 
   & footer {
     display: flex;
     flex-direction: column;
+    width: 100%;
 
     & .footer-container {
       background-color: $veryDarkCyan;
       color: whitesmoke;
-      padding: 5% 10%;
-      height: 400px;
+      padding: 10% 5%;
+      // height: 400px;
 
       display: flex;
       justify-content: space-between;
+      gap: 25%;
 
       & .contact {
-        flex-basis: 27%;
+        // width: 30%;
 
         display: flex;
         flex-direction: column;
         justify-content: space-around;
+        gap: 30px;
 
         & .logo {
           filter: brightness(0) invert(1);
@@ -214,39 +218,53 @@ body {
         }
 
         & .social-media {
+          padding-top: 10%;
           display: flex;
           align-items: center;
           gap: 5%;
+
+          & .facebook-logo:hover {
+            content: url("https://img.icons8.com/glyph-neue/50/159DF8/facebook.png");
+          }
+
+          & .instagram-logo:hover {
+            background-image: linear-gradient(
+              to bottom left,
+              rgb(195, 42, 163),
+              rgb(76, 95, 215),
+              rgb(114, 50, 189),
+              rgb(244, 111, 48),
+              rgb(255, 220, 125)
+            );
+            border-radius: 15px;
+          }
+
+          & .twitter-logo:hover {
+            content: url("https://img.icons8.com/glyph-neue/50/1D96E9/twitter-squared.png");
+          }
         }
       }
 
       & .newsletter {
-        flex-basis: 50%;
         display: flex;
         flex-direction: column;
-
-        & h3 {
-          font-size: 30px;
-        }
-
-        & p {
-          padding: 5% 0;
-          width: 380px;
-        }
+        align-items: flex-start;
+        gap: 50px;
 
         & form {
-          height: 50px;
+          width: 100%;
           display: flex;
           justify-content: space-between;
 
           & :first-child {
-            flex-basis: 60%;
+            height: 50px;
+            width: 340px;
             border-radius: 10px;
-            padding: 5px;
           }
 
           & :nth-child(2) {
-            flex-basis: 30%;
+            height: 50px;
+            width: 100px;
             background-color: $pink;
             color: whitesmoke;
             border-radius: 10px;
@@ -268,5 +286,80 @@ body {
 
   & a {
     color: hsl(228, 45%, 84%);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    max-width: $mobileWidth;
+    gap: 100px;
+
+    & header {
+      & img {
+        width: 30%;
+      }
+    }
+
+    & .hero-section p {
+      max-width: 370px;
+    }
+
+    & .stats {
+      flex-direction: column;
+      gap: 100px;
+    }
+
+    & .section-container {
+      flex-direction: column-reverse;
+      align-items: center;
+      justify-content: center;
+      // text-align: center;
+      gap: 100px;
+
+      & img {
+        max-width: 300px;
+      }
+
+      & .section-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 20px;
+        max-width: 340px;
+        padding-bottom: 50px;
+      }
+    }
+
+    & .footer-container {
+      flex-direction: column-reverse;
+
+      & .newsletter {
+        align-items: flex-start;
+        padding-bottom: 100px;
+
+        & form {
+          flex-direction: column;
+          align-items: flex-end;
+          gap: 20px;
+        }
+      }
+    }
+  }
+
+  body main .flowing-conversations .section-container {
+    flex-direction: column-reverse;
+  }
+
+  h1 {
+    font-size: 30px;
+  }
+
+  h2 {
+    font-size: 25px;
+  }
+
+  h3 {
+    font-size: 20px;
   }
 }
