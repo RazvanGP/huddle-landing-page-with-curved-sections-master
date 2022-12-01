@@ -1,8 +1,8 @@
 function checkEmail() {
-  document
-    .querySelector(".newsletter")
-    .insertAdjacentHTML(
-      "beforeend",
-      `<p style="color:red">Check your email please</p>`
-    );
+  const elem = document.querySelector(".error-message");
+  elem.classList.add("show");
+}
+
+function validateFormOnSubmit() {
+  alert("You have successgully subscribed to our newsletter");
 }
