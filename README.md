@@ -29,7 +29,7 @@ Users should be able to:
 
 ### Links
 
-- Live Site URL: [Add live site URL here](https://rgp-landing-page-curved-section.netlify.app/)
+- [Live Site URL](https://rgp-landing-page-curved-section.netlify.app/)
 
 ## My process
 
